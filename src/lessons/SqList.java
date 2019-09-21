@@ -90,4 +90,34 @@ public class SqList implements IList {
 		
 		return String.format("[ %s ]", represent.substring(0,represent.length()-2));
 	}
+
+	@Override
+	public Object peek() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object poll() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object pop() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void offer(Object x) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void push(Object x) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }

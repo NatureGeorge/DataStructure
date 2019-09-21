@@ -1,6 +1,6 @@
 package lessons;
 
-public interface IList{
+public interface IList extends ISeries{
 	public void clear();
 	public boolean isEmpty();
 	public int length();
