@@ -69,7 +69,7 @@ public class SqStack implements IStack {
 			represent += stackElem[i] + ", ";
 		}
 		
-		return String.format("[ %s ]", represent.substring(0,represent.length()-2));
+		return String.format(": %s ", represent.substring(0,represent.length()-2));
 	}
 
 	@Override

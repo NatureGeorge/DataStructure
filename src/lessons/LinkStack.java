@@ -61,6 +61,9 @@ public class LinkStack implements IStack{
 	public String display() {
 		// TODO Auto-generated method stub
 		Node cur = top;
+		if (top == null) {
+			return "Nothing";
+		}
 		String represent = "";
         while (cur.getNext() != null) {
         	represent += cur.getData()+ ", ";
