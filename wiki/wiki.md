@@ -5,12 +5,15 @@
 [toc]
 
 ## 串与数组
+
 ### 串的概念
 
 $$s = "c_{0}c_{1}c_{2}...c_{ci}...c_{n-1}"$$
 
 ### 串的模式匹配
+
 #### Brute-Force算法
+
 > 一种在实践中颇为有效的，暴力/朴素/简单直观的算法。
 
 ```java
@@ -114,13 +117,17 @@ public int[] getNextVal(String str) {
 ```
 
 #### Boyer-Moore算法
+
 (...)
 
 #### 可视化演示
+
 * http://whocouldthat.be/visualizing-string-matching/
 
 ### 串的应用
+
 #### 文本文件加密
+
 * a:原码
 * k:密钥
 * b:密码
@@ -150,33 +157,45 @@ char char_aa = (char) aa;
 ```
 
 ### 数组的概念
+
 $$A_{x\times y \times z \times ...}$$
 
 ### 数组的顺序存储
+
 对于一维数组:
+
 * $n$个元素
 * $L$:每个元素的占用字节大小
 * $Loc(0)$:首地址
+
 $$Loc(i) = Loc(0) + i \times L \quad (0\le i \lt n)$$
 
 对于二维数组:
+
 * $n \times m$个元素
 * $L$:每个元素的占用字节大小
 * $Loc(0, 0)$:首地址
+
 $$Loc(i,j) = Loc(0,0) + (i \times m + j) \times L \quad (0\le i \le n-1, 0\le j \le m-1)$$
 
 一般情况:
+
 * n维数组: $A[m_1][m_2]...[m_n]$
 * 数据元素: $a[i_1][i_2]...[i_n]$
+
 $$Loc(i_1,i_2,...,i_n) = Loc(0,0,...,0) + (i_1 \times m_2 \times ... \times m_n + i_2 \times m_3 \times ... \times m_n + ... + i_{n-1} \times m_n + i_n) \times L$$
 $$\Downarrow$$
 $$Loc(i_1,i_2,...,i_n) = Loc(0,0,...,0) + (\sum^{n-1}_{j=1}i_j \prod_{k=j+1}^{n}m_k + i_n) \times L$$
 
 ### 特殊数组的压缩存储
+
 #### 对称矩阵
+
 * 二维矩阵
 * n阶方阵A中元素满足:
+
 $$a_{ij} = a_{ji} \quad (0\le i, j \le n-1)$$
+
 * 将$n \times n$个元素压缩至$\dfrac{n(n+1)}{2}$个元素的存储空间 (@等差数列求和公式)
 * 可按优先顺序存储 (@等差数列求和公式):
   * $S[\frac{n(n+1)}{2}]$
@@ -191,6 +210,7 @@ $$
 * 示例:
   * $a_1 = 1 ,\, a_n = n \Rightarrow S_n = \frac{n(n+1)}{2}$
   * $A[2][1] \Rightarrow skip\{(0,0)(1,0)(1,1)\} \leftrightarrow skip\{S_2=\frac{2(2+1)}{2}\} \Rightarrow skip\{(2,0)\} \leftrightarrow skip\{j=1\} \Rightarrow (2,1)$
+
 ```latex
 A:
 (0,0)
@@ -202,9 +222,10 @@ S:
 (0,0)..(1,0) (1,1)..(2,0) (2,1) (2,2)..(3,0) (3,1) (3,2) (3,3)...
 ```
 
-
 #### 三角矩阵
+
 > 对称矩阵的特例
+
 * 二维矩阵
 * $n$阶方阵
 * 上三角or下三角
@@ -213,6 +234,7 @@ S:
   * $S[\frac{n(n+1)}{2}]$
   * $A[i][j] = S[k]$:
     * 下三角:
+
 $$ k = \begin{cases}
     \dfrac{i(i+1)}{2} + j \quad & (i \ge j) \\\\
     null \quad & (i \lt j)

@@ -59,7 +59,15 @@ public class LinkList implements IList{
 	            throw new Exception("Invalid Input !");
 	        }
 		 else if (i == 0){
-			 insertHead(x);
+			 if (head.getNext() == null) {
+				 insertHead(x);
+			 }else {
+				 Node newNode = new Node(x);
+				 Node cur = head.getNext();
+				 head.setNext(newNode);
+				 newNode.setNext(cur);
+			 }
+			 
 		 }
 	     else {
 	            Node cur = head;
